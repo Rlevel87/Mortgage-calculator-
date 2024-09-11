@@ -1,0 +1,501 @@
+
+:root {
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+    --White: hsl(0, 0%, 100%);
+    --Slate100: hsl(202, 86%, 94%);
+    --Slate300: hsl(203, 41%, 72%);
+    --Slate500: hsl(200, 26%, 54%);
+    --Slate700: hsl(200, 24%, 40%);
+    --Slate900: hsl(202, 55%, 16%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.inputContainer{
+    margin-top: 2rem;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.inputContainer *{
+    margin-bottom: .2rem;
+}
+.clearContainer{
+    width: 300px;
+}
+.clearContainer p{
+    text-decoration: underline;
+    margin-bottom: 1.5rem;
+    margin-top: 10px;
+    
+}
+#clear{
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 1.5rem;
+    margin-left: -1.5rem;
+    margin-top: 10px;
+    width: 100px;
+    height: 16px;
+    border: none;
+    background-color: white;
+}
+.mortgageAmount{
+    width: 300px;
+    
+}
+.dollars{
+    display: flex;
+    border: 1px solid black;
+    border-radius: .2rem;
+    flex-direction: row-reverse;
+}
+#dollarSymbol{
+    padding: .7rem .75rem;
+    color: var(--Slate700);
+    font-weight: 600;
+    background-color: var(--Slate100);
+    border: 1px solid var(--Slate100);
+    margin: 0;   
+    
+}
+#mortAmount{
+    width: 100%;
+    height: 40px;
+    text-indent: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: white;
+    border: 0;
+    outline: 0;
+}
+.dollars:hover{
+    border-color: var(--Lime);
+}
+input:focus  {
+    border: 1px solid var(--Lime);
+    outline: 1px solid var(--Lime);
+    
+}
+input:focus + #dollarSymbol{
+    background-color: var(--Lime);
+    
+}
+input:focus + #yearsBox{
+    background-color: var(--Lime);
+   
+}
+input:focus + #rateBox{
+    background-color: var(--Lime);
+    
+}
+
+.termRate{
+    margin-top: 1.5rem;
+    width: 300px;
+}
+#yearsBox{
+    position: absolute;
+    padding-left: 22px;
+    padding-top: 12px;
+    margin-left: 13.4rem;
+    margin-top: -52px;
+    background-color: var(--Slate100);
+    font-weight: 600;
+    color: var(--Slate700);
+    width: 85px;
+    height: 48px;
+}
+#numOfYears{
+    text-indent: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#numOfYears:hover{
+    border-color: var(--Lime);
+}
+.rate{
+    margin-top: 1.5rem;
+}
+#rateBox{
+    position: absolute;
+    padding-left: 15px;
+    padding-top: 12px;
+    margin-left: 15.9rem;
+    margin-top: -52px;
+    background-color: var(--Slate100);
+    font-weight: 600;
+    color: var(--Slate700);
+    width: 45px;
+    height: 48px;
+}
+#percentOfRate{
+    text-indent: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#percentOfRate:hover{
+    border-color: var(--Lime);
+}
+.mortgageType{
+    margin-top: 1.5rem;
+    display: block;
+}
+.mortgageType p{
+    margin-left: 0rem;
+}
+#repaymentContainer,
+#interestOnlyContainer{
+    width: 300px;
+    height: 50px;
+    border: 1px solid hsl(0, 0%, 0%, .3);
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: .5rem;
+}
+
+#repaymentContainer:hover,
+#interestOnlyContainer:hover {
+    border-color: var(--Lime);
+    background-color: hsl(61, 70%, 52%, .3);
+}
+
+input{
+    cursor: pointer;
+    margin-top: 5px;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: white;   
+}
+.radioBtn{
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-left: 8px;
+}
+label{
+    padding: .2rem; 
+    font-weight: 600;
+    font-size: 18px;
+}
+.calculatePay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    margin-top: 1rem;
+    background-color: var(--Lime);
+    border: none;
+}
+.calculatePay p{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.resultsContainer{
+    position: relative;
+    color: white;
+    background-color: var(--Slate900);
+    width: 380px;
+    margin: 0 auto;
+}
+.preResult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.preResult p{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 12px;
+    line-height: 20px;
+    width: 250px;
+    opacity: .6;
+}
+.postResult{
+    position: relative;
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+    z-index: 0;
+}
+.postResult *{
+    padding: .5rem;
+}
+.postResult p{
+    line-height: 20px;
+    font-size: 14px;
+    opacity: .6;
+}
+.resultsBox{
+    position: relative;
+    background-color:  hsl(202, 55%, 10%);
+    border-radius: .2rem;
+    margin-top: 20px;
+    z-index: 2;
+}
+.resultsBox input{
+    background: transparent;
+    border: none;  
+}
+.limeTop {
+    position: absolute;
+    width: 315px;
+    height: 10px;
+    margin-top: 173px;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    background-color: var(--Lime);
+    z-index: 1;
+}
+#payments{
+    font-size: 45px;
+    color: var(--Lime);
+    padding-bottom: 1rem;
+}
+.borderLine{
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid hsl(0, 0%, 50%, .3);
+}
+#totalRepay{
+    font-size: 25px;
+    color: white;
+}
+#resultsImg{
+    margin-top: 1.5rem;
+}
+#requiredMessageDollar{
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+}
+#requiredMessageYears{
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+}
+#requiredMessageRate{
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+}
+#requiredMessageType{
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    color: red;
+}
+input[type=radio]{
+    appearance: none;
+    width: .5rem;
+    height: .5rem;
+    margin-right: .5rem;
+    margin-top: .6rem;
+    outline: 2px solid var(--Slate900);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+input[type='radio']:checked{
+    background-color: var(--Lime);
+    outline: 2px solid var(--Lime);
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 1426px){
+    body{
+        background-color: var(--Slate100);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container{
+      flex-direction: row;
+      height: 100vh;
+      
+    
+    }
+    .inputContainer{
+        margin-top: 0rem;
+        margin: 0rem;
+        display: block;
+        background-color: white;
+        width: 550px;
+        height: 600px; 
+        padding: 2rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+    .resultsContainer{
+        color: white;
+        background-color: var(--Slate900);
+        width: 500px;
+        height: 600px;
+        margin-left: -3.5rem;
+        border-bottom-left-radius: 4rem;
+        border-bottom-right-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    .preResult{
+        margin-top: 7rem;
+       
+    }
+    .preResult p{
+        width: 425px;
+        font-size: 16px;
+    }
+    .mortgageAmount{
+        width: 500px;
+    }
+    .clearContainer{
+        width: 100%;
+        display: flex;
+        margin-top: 1rem;
+    }
+    #clear{
+        cursor: pointer;
+        text-decoration: underline;
+        margin-bottom: 1.5rem;
+        margin-left: 10rem;
+        margin-top: 5px;
+        width: 100px;
+        height: 16px;
+        border: none;
+    }
+    .mortgageAmount{
+        width: 88%;
+        display: flex;
+        flex-direction: column;
+    }
+    #mortAmount{
+        text-indent: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        
+    }
+    
+   
+    .termRate{
+        margin-top: 1.5rem;
+        width: 100%;
+        display: flex;
+    }
+    #yearsBox{
+        padding-left: 22px;
+        padding-top: 14px;
+        margin-left: 7rem;
+        margin-top: -52px;
+        height: 48px;
+        width: 87px;
+    }
+    .rate{
+        margin-top: 0rem;
+        margin-left: 2rem;
+    }
+    #rateBox{
+        position: absolute;
+        padding-left: 15px;
+        padding-top: 11px;
+        margin-left: 154px;
+        margin-top: -52px;
+}
+
+    #repaymentContainer,
+    #interestOnlyContainer{
+        width: 429px;
+}
+    input{
+        margin-top: 5px;
+        width: 200px;
+        height: 50px;
+        border-radius: 5px;
+        border-width: 1px;
+    }
+    button{
+        width: 429px;
+        height: 50px;
+        border-radius: 5px;
+        margin-top: .5rem;
+        border-width: 1px;
+    }
+    .calculatePay{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 300px;
+        padding: 25px;
+        background-color: var(--Lime);
+        border: none;
+    }
+    .mortgageType{
+        margin-top: 1.5rem;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;   
+    }
+    .mortgageType p{
+        margin-left: 0rem;
+    }
+    .postResult p{
+        line-height: 25px;
+    }
+    #payments{
+        margin: 0;
+    }
+    .limeTop {
+        position: absolute;
+        width: 436px;
+        margin-top: 168px;
+       
+    }
+    .resultsBox{
+        position: relative;
+        background-color:  hsl(202, 55%, 10%);
+        border-radius: .2rem;
+        margin-top: 20px;
+        z-index: 2;
+        height: 280px;
+    }
+    .borderLine{
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+    .resultsBox input{
+        background: transparent;
+        border: none;  
+    }
+}

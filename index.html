@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <title>Mortgage Calculator</title>
+</head>
+<body>
+        
+    <div class="container">
+
+        <div class="inputContainer">
+            <div class="clearContainer">
+                <h3> Mortgage Calculator </h3>
+                <button onclick="clearAll()" id="clear">Clear All</button>
+            </div>
+
+            
+
+            <div class="mortgageAmount">
+                <label for="">Mortgage Amount</label>
+                <div class="dollars">                      
+                         <input type="text" name="mortgageAmound" value="" id="mortAmount" class="radioBtnS" >
+                         <p id="dollarSymbol">$</p>   
+                </div>       
+                     <div id="requiredMessageDollar" class="requiredMessage">
+                         <p>This field is required</p>
+                    </div> 
+                  
+            </div>
+            
+            
+
+            <div class="termRate">
+                <div class="term">
+                    <p>Mortgage Term</p>
+                        <input type="text" name="years" id="numOfYears" placeholder="" class="radioBtnS">
+                        <p id="yearsBox">years</p>
+                        <div id="requiredMessageYears" class="requiredMessage">
+                            <p>This field is required</p>
+                        </div>                             
+                </div>
+
+                <div class="rate">
+                    <div class="ratePercent">
+                            <p>Interest Rate</p>
+                            <input type="text" name="rate" id="percentOfRate" class="radioBtnS">
+                            <p id="rateBox">%</p>
+                        <div id="requiredMessageRate" class="requiredMessage">
+                            <p>This field is required</p>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="mortgageType">
+                <p>Mortgage Type</p>
+                <div id="repaymentContainer">
+                    <input type="radio" value="Repayment" name="payType" class="radioBtn"  class="radioBtnS" id="repayment">
+                    <label for="Repayment">Repayment</label>
+                </div>
+                
+                <div id="interestOnlyContainer">
+                    <input type="radio" value="interestOnly"  name="payType" class="radioBtn"  class="radioBtnS" id="interestOnly">
+                    <label for="Interest">Interest Only</label>
+                </div>
+
+                <div id="requiredMessageType" class="requiredMessage">
+                    <p>This field is required</p>
+                </div>   
+            </div>
+
+            <div class="calculatePayBtn">
+                <button class="calculatePay" onclick="calculate()"> 
+                    <img src="images/icon-calculator.svg" alt="Click to calculate repayments">
+                    <p>Calculate Repayments</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="resultsContainer">
+            
+            <div class="preResult">
+                <img  id="resultsImg" src="images/illustration-empty.svg" alt="Image of calculater and money">
+                <h3>Results shown here</h3>
+                <p>Complete the form and click "calculate
+                    repayments" to see what your monthly 
+                    repayments would be. 
+                </p>
+            </div>
+
+            <div class="postResult">
+                <div>
+                    <h2>Your results</h2>
+
+                    <p>Your results are shown below based on the 
+                        information you provided. To adjust the 
+                        results. edit the form and click "calculate
+                        repayments" again. 
+                    </p>
+                </div>
+                <div class="limeTop"></div>
+                <div class="resultsBox">
+                    
+                    <div class="borderLine">
+                        <p>Your monthly repayments</p>
+                        <input type="text" value="0" id="payments">
+                    </div>
+                        <p>Total you'll repay over the term</p>
+                        <input type="text" value="0" id="totalRepay">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+    </div><br>
+
+
+
+
+    <footer>Challenge by <a href="https://www.frontendmentor.io/home">Frontend Mentor.</a>
+        Coded by <a href="https://www.frontendmentor.io/profile/Rlevel87">Rlevel87</a>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
